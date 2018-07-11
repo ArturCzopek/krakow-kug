@@ -1,6 +1,7 @@
 package pl.simplecoding.krakowkug
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import org.springframework.data.repository.CrudRepository
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -25,3 +26,9 @@ data class User(
         @Column(name = "to_give_green") var toGiveGreen: Int = 10,
         @Column(name = "to_give_red") var toGiveRed: Int = 10
 )
+
+interface UserRepository: CrudRepository<User, Long> {
+    override fun findAll(): List<User>
+
+    fun findOneByName(name: String): User
+}
