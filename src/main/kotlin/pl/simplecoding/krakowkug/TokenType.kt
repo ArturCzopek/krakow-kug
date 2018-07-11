@@ -11,6 +11,7 @@ enum class TokenType {
     RED;
 
     companion object {
+        @JvmStatic
         fun fromString(value: String) = when (value) {
             "green" -> GREEN
             "red" -> RED
