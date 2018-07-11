@@ -11,6 +11,7 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class KrakowKugApplication
 
+
 fun main(args: Array<String>) {
     runApplication<KrakowKugApplication>(*args)
 }
